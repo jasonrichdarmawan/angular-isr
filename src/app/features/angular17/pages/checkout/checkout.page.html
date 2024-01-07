@@ -1,0 +1,17 @@
+<p>checkout works!</p>
+
+<button (click)="selector = 'app-slot-and-tickets'">Slot & Tickets</button>
+<button (click)="selector = 'app-your-details'">Your Details</button>
+<button (click)="selector = 'app-payment'">Payment</button>
+
+@defer (when selector === 'app-slot-and-tickets') {
+    <app-slot-and-tickets *ngIf="selector === 'app-slot-and-tickets'"></app-slot-and-tickets>
+}
+
+@defer (when selector === 'app-your-details') {
+    <app-your-details *ngIf="selector === 'app-your-details'"></app-your-details>
+}
+
+@defer (when selector === 'app-payment') {
+    <app-payment *ngIf="selector === 'app-payment'"></app-payment>
+}

@@ -6,6 +6,10 @@ const routes: Routes = [
     path: 'defer',
     loadComponent: () => import("./pages/defer/defer.page").then(c => c.DeferPage),
   },
+  {
+    path: 'checkout',
+    loadComponent: () => import("./pages/checkout/checkout.page").then(c => c.CheckoutPage),
+  }
 ];
 
 @NgModule({
