@@ -10,5 +10,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-isr';
+  readonly timeZone: string;
+
+  constructor() {
+    this.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  }
 }

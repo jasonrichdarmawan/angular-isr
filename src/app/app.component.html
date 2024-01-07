@@ -1,9 +1,10 @@
 <ul style="list-style: none;">
     <li>
-        <input type="checkbox" disabled><a routerLink="isr/uuidv4">isr/uuidv4</a>
+        <input type="checkbox"><a routerLink="isr/uuidv4" [queryParams]="{ timeZone }">isr/uuidv4?timeZone={{ timeZone }}</a>
+        <p>For reference: <a href="https://stackoverflow.com/a/70870895/13285583">StackOverflow</a></p>
     </li>
     <li>
-        <input type="checkbox" checked disabled> <a routerLink="angular17/defer">angular17/defer</a>
+        <input type="checkbox" checked><a routerLink="angular17/defer" [queryParams]="{ timeZone }">angular17/defer</a>
     </li>
 </ul>
 <router-outlet></router-outlet>
