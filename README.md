@@ -1,3 +1,9 @@
+# To Do
+
+- [ ] `@rx-angular/-isr` is not compatible with Angular 17, yet.
+
+However, Angular 17 introduced the `@defer` snytax which the value is too good to pass up.
+
 # AngularIsr
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
