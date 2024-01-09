@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformServer } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -12,7 +12,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class AppComponent {
   readonly timeZone: string;
 
-  constructor() {
-    this.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  constructor(
+    @Inject(PLATFORM_ID) platformID: Object,
+  ) {
+    let isServer = isPlatformServer(platformID);
+
+    this.timeZone = isServer ? "server" : Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 }
